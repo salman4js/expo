@@ -33,7 +33,7 @@ router.post("/sendtext", (req, res, next) => {
     console.log(text)
     sendtext(text);
     console.log("Working")
-    res.send("Working")
+    res.send(text)
 })
 
 app.use('/.netlify/functions/server', router)
