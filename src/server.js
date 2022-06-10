@@ -31,18 +31,6 @@ router.get("/", (req, res, next) => {
 router.post("/sendtext", (req, res, next) => {
     const { text } = req.query
     console.log(text)
-    sendtext(text);
-    console.log("Working")
-    res.send(text)
-})
-
-app.use('/.netlify/functions/server', router)
-
-
-module.exports.handler = serverless(app)
-
-
-const sendtext = (text) => {
     const from = "Vonage APIs"
     const to = "919361485237"
     
@@ -57,4 +45,13 @@ const sendtext = (text) => {
             }
         }
     })
-}
+    console.log("Working")
+    res.send(text)
+})
+
+app.use('/.netlify/functions/server', router)
+
+
+module.exports.handler = serverless(app)
+
+
