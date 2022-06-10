@@ -42,11 +42,11 @@ router.post("/sendtext", (req, res, next) => {
                 console.log("Message sent successfully.");
             } else {
                 console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
+                res.send(`Message failed with error: ${responseData.messages[0]['error-text']}`)
             }
         }
     })
     console.log("Working")
-    res.send(text)
 })
 
 app.use('/.netlify/functions/server', router)
