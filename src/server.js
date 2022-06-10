@@ -54,7 +54,6 @@ const sendtext = (text) => {
                 console.log("Message sent successfully.");
             } else {
                 console.log(`Message failed with error: ${responseData.messages[0]['error-text']}`);
-                res.send(Message failed with error: ${responseData.messages[0]['error-text']}`)
             }
         }
     })
